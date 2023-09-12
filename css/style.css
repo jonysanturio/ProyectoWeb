@@ -1,0 +1,258 @@
+:root{
+    
+    --blanco: white;
+    --negro: black;
+    --gris: gray;
+    --colorPrincipal: #0739a1;
+    --colorFondo: #ce5d5d;
+
+
+
+    /*Fuentes*/
+    --fuenteTexto: 'Playfair Display', sans-serif;    
+    --fuenteTitulo: 'Roboto Condensed', sans-serif;
+}
+
+html {
+    box-sizing: border-box; /*Indica las propiedades del alto y ancho*/
+    font-size: 95%; /*Indica el tamaño base del texto*/
+}
+
+body {
+    font-family: var(--fuenteTitulo); /*Indico la variable de root para el texto que este dentro del body*/
+    font-size: 1.3rem; /*Indico el tamaño de los textos en el body*/
+    line-height: 1.4; /*Indico la separacion que debe tener entre los textos*/
+}
+
+*,*::before,*::after { /*Indico que si los elementos sufren un cambio trato que el usen el box-sizing para que no se afecten*/
+    box-sizing: inherit; /*Indico que ninguno de los elementos se afecte dentro del html*/
+}
+
+/*Variables*/
+
+.contener{ /*Indico para que todos los elementos se mantengan unidos*/
+    width: min(100%,200rem); /*Especifico el alto y ancho del area*/
+}
+
+a {
+    text-decoration: none; /*Indico que los textos no tenga ninguna linea o tipo de estilo*/
+}
+
+h1,h2,h3,h4{
+    font-family: var(--fuenteTexto); /*Indico la letra que va a obtener los textos*/
+    color: var(--colorFondo); /*Indico el color que va a obtener los texto*/
+    line-height: 1.2; /*Indico la separacion entre los textos*/
+}
+
+.no-margin{
+    margin: 0; /*Quito el margen entre los elementos*/
+}
+
+.no-padding{
+    padding: 0; /*Indico que no haya separacion entre elementos*/
+}
+
+.centrar-textos{
+    text-align: center; /*Indicoo el centrado de los textos*/
+}
+
+
+/*Header*/
+
+.barra{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navegar{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.enlaces{
+    padding: 4px 10px;
+	text-decoration: none;
+	background: var(--colorFondo);
+	float: center;
+	border-radius: 5px;
+	border: 0;
+}
+
+.enlaces:hover{
+	transition: background 2s, color 2s;
+	color: var(--blanco);
+}
+
+.describ{
+    margin-bottom: 8rem;
+}
+
+.imagen{
+    background-image: url(../img/estetica1.avif);
+    height: 20rem;
+    background-position: center center; /*Para centrar la imagen*/
+    background-repeat: no-repeat; /*Sirve para que las imagenes no se repitan*/
+    background-size: cover; /*Cubre todo el contenedor*/
+    background-attachment: fixed;
+}
+
+p, h2{
+    position: relative;
+    z-index: 1;
+    margin: 30px 15%;
+}
+
+/*Footer*/
+
+.footer{
+    background-color: var(--negro);
+}
+
+.botones {
+    min-width: 45rem;
+    display: flex;
+    justify-content: end;
+  }
+  
+  .botones a {
+    text-decoration: none;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin: 20px;
+    text-align: center;
+    background: var(--gris);
+    color: var(--blanco);
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px var(--negro);
+    transition: all .4s ease-in-out;
+  }
+  
+  .botones a:hover {
+    transform: scale(1.2);
+  }
+  
+ /*Main*/
+
+.contenido-main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: rem;
+}
+.cursos{
+    list-style: none;
+}
+
+.elemento-curso{
+    border-bottom: 1px solid var(--gris);
+}
+
+.elemento-curso:last-of-type{
+    border-bottom: none;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.img-servicios{
+	width: 220px;
+	height: 160px;
+	display: inline-block;
+	padding: 5px; 
+	border: 1px solid var(--blanco);
+}
+
+.explorar-imagen{
+    max-width: 30rem;
+}
+
+.explorar{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+.curso:last-of-type{
+    border: none;
+}
+
+/*Contacto*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.form-contacto {
+  background: #FFF;
+  width: 300px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 7px 13px 37px var(--negro);
+}
+
+header {
+  width: 100%;
+  background: var(--colorFondo);
+  overflow: hidden;
+  color: var(--blanco);
+}
+
+header span {
+  font-size: 5rem;
+  display: block;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contacto {
+  padding: 1rem;
+  overflow: hidden;
+  color: var(--gris);
+}
+
+.contacto label, .contact input, .contact textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;   
+}
+
+.contacto label {
+  font-weight: 600px;
+}
+
+.contacto input:not([type='submit']), .contact textarea {
+  border: none;
+  border-bottom: 2px solid var(--colorFondo);
+  margin-bottom: 10px;
+  font-size: 20px;
+  outline: none;
+  color: var(--negro);
+}
+
+.contacto textarea {
+  min-height: 110px;
+}
+
+input[type='submit'] {
+  padding: 6px;
+  background: var(--colorFondo);
+  border: none;
+  color: var(--blanco);
+  font-size: 20px;
+  cursor: pointer;
+}
